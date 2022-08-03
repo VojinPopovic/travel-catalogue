@@ -43,14 +43,15 @@ class SliderPopular {
     let descriptionA = document.createElement("a");
 
     // prettier-ignore
-    descriptionA.setAttribute("href", `https://en.wikipedia.org/wiki/${this.popularCountry.country}`)
     sliderContainer
       .appendChild(descriptionDiv)
       .appendChild(descriptionUl)
       .appendChild(descriptionLi)
       .appendChild(descriptionA).classList = "country";
     // prettier-ignore
-    let countryLink = document.querySelector(".country").innerHTML = `Country: ${this.popularCountry.country}`;
+    let countryLink = document.querySelector(".country");
+    countryLink.innerHTML = `Country: ${this.popularCountry.country}`
+    countryLink.setAttribute("href", `https://www.google.com/search?q=${this.popularCountry.country}`)
 
     sliderContainer
       .appendChild(descriptionDiv)
@@ -58,6 +59,8 @@ class SliderPopular {
       .appendChild(descriptionLi)
       .appendChild(descriptionA.cloneNode()).classList = "capital";
     // prettier-ignore
-    let capitalLink = document.querySelector(".capital").innerHTML = `Capital: ${this.popularCountry.capital}`;
+    let capitalLink = document.querySelector(".capital");
+    capitalLink.innerHTML = `Capital: ${this.popularCountry.capital}`
+    capitalLink.setAttribute("href", `https://www.google.com/search?q=${this.popularCountry.capital}`)
   }
 }

@@ -8,7 +8,7 @@ config = {
 };
 
 configPopular = {
-  country: "iceland",
+  country: "Iceland",
   capital: "Reykjavík",
   native_language: "Icelandic",
   images: ["/images/iceland.jpg", "/images/iceland1.jpg", "/images/iceland2.jpg"],

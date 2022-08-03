@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="script-config.js" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Ubuntu:wght@300;400;700&display=swap");
     </style>
@@ -26,7 +27,7 @@
                 <li>Popular</li>
                 <li>Summer</li>
                 <li>Winter</li>
-                <li>About us</li>
+                <li>About</li>
                 <li>Contact</li>
               </ul>
             </div>
@@ -34,6 +35,7 @@
         </nav>
       </header>
       <section class="slider-section">
+        <h2>Most Popular Destination</h2>
         <div class="picture-slider-container">
           <div class="btns-container">
             <!-- prettier-ignore -->
@@ -44,7 +46,12 @@
         </div>
       </section>
       <section class="catalogue-section">
-        <div class="catalogue-container"></div>
+        <div class="catalogue-container">
+          <select name="country-selection" id="country-selection">
+            <option value="iceland">Iceland</option>
+            <option value="sweden">Sweden</option>
+          </select>
+        </div>
       </section>
     </div>
   </body>

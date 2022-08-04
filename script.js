@@ -75,31 +75,46 @@ class DestinationList {
   constructor(config) {
     this.countryList = config;
     this.populateList();
+    this.displayOverlay();
   }
   populateList() {
     let catalogue = document.querySelector(".grid-center");
     for (let destination in this.countryList) {
-      console.log(this.countryList[destination].capital)
+      console.log(this.countryList[destination].capital);
       let item = document.createElement("div");
       let picture = document.createElement("div");
-      let textDiv = document.createElement("div")
-      let country = document.createElement("h2")
-      let description = document.createElement("p")
-      let readMore = document.createElement("button");
+      let textDiv = document.createElement("div");
+      let country = document.createElement("h2");
+      let description = document.createElement("p");
 
-      country.innerText = `${destination}`
-      description.innerText = `Capital: ${this.countryList[destination].capital} and Official language: ${this.countryList[destination].official_language}`;
+      country.innerText = `${destination}`;
+      description.innerText = `Capital: ${this.countryList[destination].capital} 
+      Official language: ${this.countryList[destination].official_language}`;
       item.classList = "catalogue-item";
       picture.classList = "item-picture";
-      textDiv.classList = "text-container"
-      let pictureUrl = this.countryList[destination].images[0]
+      textDiv.classList = "text-container";
+      let pictureUrl = this.countryList[destination].images[0];
+      // prettier-ignore
       catalogue.appendChild(item).appendChild(picture).style.backgroundImage = `url("${pictureUrl}")`;
 
       let catalogueItems = document.querySelectorAll(".catalogue-item");
-      catalogueItems.forEach(el => el.appendChild(textDiv))
-      let textDivs = document.querySelectorAll(".text-container")
-      textDivs.forEach(el => el.appendChild(country))
-      textDivs.forEach(el => el.appendChild(description))
+      catalogueItems.forEach((el) => el.appendChild(textDiv));
+      let textDivs = document.querySelectorAll(".text-container");
+      textDivs.forEach((el) => {
+        el.appendChild(country);
+        el.appendChild(description);
+      });
     }
+  }
+  displayOverlay() {
+    let catalogueItem = document.querySelectorAll(".catalogue-item");
+    let overlay = document.querySelector(".overlay");
+    let cancel = document.querySelector(".close-overlay");
+    catalogueItem.forEach((item) =>
+      item.addEventListener("click", () => {
+        overlay.style.display = "flex";
+      })
+    );
+    cancel.addEventListener("click", () => (overlay.style.display = "none"));
   }
 }

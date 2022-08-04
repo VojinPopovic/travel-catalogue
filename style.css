@@ -240,6 +240,33 @@ option {
   gap: 20px;
 }
 
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content-container {
+  width: 60%;
+  height: 700px;
+  background-color: rgb(224, 224, 224);
+  position: relative;
+}
+
+.overlay div button{
+  width: 5vw;
+  height: 5vw;
+  background-color: black;
+  position:absolute;
+  right: 0;
+}
+
 @media (min-width: 1000px) {
   .grid-center {
     grid-template-columns: repeat(3, 25vw);

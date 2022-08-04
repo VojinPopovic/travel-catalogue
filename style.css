@@ -195,7 +195,7 @@ option {
 }
 
 .grid-center {
-  margin-top: 10vw;
+  margin-block: 10vw;
   width: 90vw;
   height: auto;
   background-color: rgb(224, 224, 224);
@@ -242,13 +242,13 @@ option {
 
 @media (min-width: 1000px) {
   .grid-center {
-    grid-template-columns: repeat(3, 20vw);
-    column-gap: 15vw;
-    row-gap: 15vw;
-    grid-auto-rows: 20vw;
+    grid-template-columns: repeat(3, 25vw);
+    column-gap: 7.5vw;
+    row-gap: 7.5vw;
+    grid-auto-rows: 25vw;
   }
   .grid-center div {
-    width: 20vw;
-    height: 20vw;
+    width: 25vw;
+    height: 25vw;
   }
 }

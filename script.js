@@ -50,8 +50,11 @@ class SliderPopular {
       .appendChild(descriptionA).classList = "country";
     // prettier-ignore
     let countryLink = document.querySelector(".country");
-    countryLink.innerHTML = `Country: ${this.popularCountry.country}`
-    countryLink.setAttribute("href", `https://www.google.com/search?q=${this.popularCountry.country}`)
+    countryLink.innerHTML = `Country: ${this.popularCountry.country}`;
+    countryLink.setAttribute(
+      "href",
+      `https://www.google.com/search?q=${this.popularCountry.country}`
+    );
 
     sliderContainer
       .appendChild(descriptionDiv)
@@ -60,7 +63,39 @@ class SliderPopular {
       .appendChild(descriptionA.cloneNode()).classList = "capital";
     // prettier-ignore
     let capitalLink = document.querySelector(".capital");
-    capitalLink.innerHTML = `Capital: ${this.popularCountry.capital}`
-    capitalLink.setAttribute("href", `https://www.google.com/search?q=${this.popularCountry.capital}`)
+    capitalLink.innerHTML = `Capital: ${this.popularCountry.capital}`;
+    capitalLink.setAttribute(
+      "href",
+      `https://www.google.com/search?q=${this.popularCountry.capital}`
+    );
+  }
+}
+
+class DestinationList {
+  constructor(config) {
+    this.countryList = config;
+    this.populateList();
+  }
+  populateList() {
+    let catalogue = document.querySelector(".grid-center");
+    for (let destination in this.countryList) {
+      console.log(this.countryList[destination].capital)
+      let item = document.createElement("div");
+      let picture = document.createElement("div");
+      let country = document.createElement("h2")
+      let description = document.createElement("p")
+      let readMore = document.createElement("button");
+
+      country.innerText = `${destination}`
+      description.innerText = `Capital: ${this.countryList[destination].capital} and Official language: ${this.countryList[destination].official_language}`;
+      item.classList = "catalogue-item";
+      picture.classList = "item-picture";
+      let pictureUrl = this.countryList[destination].images[0]
+      catalogue.appendChild(item).appendChild(picture).style.backgroundImage = `url("${pictureUrl}")`;
+
+      let catalogueItems = document.querySelectorAll(".catalogue-item");
+      catalogueItems.forEach(el => el.appendChild(country))
+      catalogueItems.forEach(el => el.appendChild(description))
+    }
   }
 }

@@ -89,7 +89,10 @@ class DestinationList {
       country.innerText = `${destination}`;
       description.innerText = `Capital: ${this.countryList[destination].capital} 
       Official language: ${this.countryList[destination].official_language}`;
-      item.classList = "catalogue-item";
+      item.classList.add(
+        "catalogue-item",
+        `${this.countryList[destination].category}`
+      );
       picture.classList = "item-picture";
       textDiv.classList = "text-container";
       let pictureUrl = this.countryList[destination].images[0];
@@ -103,6 +106,8 @@ class DestinationList {
         el.appendChild(country);
         el.appendChild(description);
       });
+
+      this.filterDestinations(destination, catalogueItems);
     }
   }
   displayOverlay() {
@@ -115,5 +120,19 @@ class DestinationList {
       })
     );
     cancel.addEventListener("click", () => (overlay.style.display = "none"));
+  }
+  filterDestinations(destination, catalogueItems) {
+    let selection = document.querySelector("select");
+    selection.addEventListener("change", (e) => {
+      catalogueItems.forEach((item) => {
+        item.style.display = "none";
+        if (item.className.includes(e.target.value)) {
+          item.style.display = "block";
+        }
+        if (e.target.value === "all") {
+          item.style.display = "block";
+        }
+      });
+    });
   }
 }

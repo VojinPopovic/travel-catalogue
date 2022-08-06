@@ -45,6 +45,10 @@ class DestinationList {
     catalogueItem.forEach((item) =>
       item.addEventListener("click", () => {
         overlay.style.display = "flex";
+        let destination = item.querySelector("h2").innerText;
+        let imageDivClass = "overlay-picture-container";
+        this.sliderLeft(destination, imageDivClass);
+        this.sliderRight(destination, imageDivClass);
       })
     );
     cancel.addEventListener("click", () => (overlay.style.display = "none"));
@@ -64,33 +68,39 @@ class DestinationList {
     });
   }
 
-  sliderLeft(destination) {
+  sliderLeft(destination, imageDivClass) {
     let image = this.countryList[destination].images;
-    let imageDiv = document.querySelector(".picture-slider-container");
-    let btnLeft = document.querySelector(".btn-left");
-    btnLeft.addEventListener("click", () => {
-      this.imgNum--;
-      if (this.imgNum < 0) {
-        this.imgNum = image.length - 1;
-        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-      } else {
-        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-      }
-    });
+    let imageDiv = document.querySelector(`.${imageDivClass}`);
+    let btnLeft = document.querySelectorAll(".btn-left");
+    btnLeft.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        imageDiv.style.backgroundImage = `url("${image[0]}")`;
+        this.imgNum--;
+        if (this.imgNum < 0) {
+          this.imgNum = image.length - 1;
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        } else {
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        }
+      })
+    );
   }
-  sliderRight(destination) {
+  sliderRight(destination, imageDivClass) {
     let image = this.countryList[destination].images;
-    let imageDiv = document.querySelector(".picture-slider-container");
-    let btnRight = document.querySelector(".btn-right");
-    btnRight.addEventListener("click", () => {
-      this.imgNum++;
-      if (this.imgNum >= image.length) {
-        this.imgNum = 0;
-        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-      } else {
-        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-      }
-    });
+    let imageDiv = document.querySelector(`.${imageDivClass}`);
+    let btnRight = document.querySelectorAll(".btn-right");
+    btnRight.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        imageDiv.style.backgroundImage = `url("${image[0]}")`;
+        this.imgNum++;
+        if (this.imgNum >= image.length) {
+          this.imgNum = 0;
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        } else {
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        }
+      })
+    );
   }
   sliderDescription(destination) {
     let sliderContainer = document.querySelector(".picture-slider-container");
@@ -129,9 +139,13 @@ class DestinationList {
   }
   mostPopularFinder(destination) {
     if (this.countryList[destination].category.includes("most")) {
-   this.sliderLeft(destination) 
-   this.sliderRight(destination)
-   this.sliderDescription(destination)
+      let imageDivClass = "picture-slider-container";
+      this.sliderLeft(destination, imageDivClass);
+      this.sliderRight(destination, imageDivClass);
+      this.sliderDescription(destination);
     }
+  }
+  removeBackgroundPicture(imageDiv) {
+    imageDiv.style.backgroundImage = "none";
   }
 }

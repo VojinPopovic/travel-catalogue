@@ -80,7 +80,6 @@ class DestinationList {
   populateList() {
     let catalogue = document.querySelector(".grid-center");
     for (let destination in this.countryList) {
-      console.log(this.countryList[destination].capital);
       let item = document.createElement("div");
       let picture = document.createElement("div");
       let textDiv = document.createElement("div");

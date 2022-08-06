@@ -1,14 +1,3 @@
-configPopular = {
-  country: "Iceland",
-  capital: "Reykjavík",
-  official_language: "Icelandic",
-  images: [
-    "/images/iceland.jpg",
-    "/images/iceland1.jpg",
-    "/images/iceland2.jpg",
-  ],
-};
-
 config = {
   Iceland: {
     capital: "Reykjavík",
@@ -18,7 +7,7 @@ config = {
       "/images/iceland1.jpg",
       "/images/iceland2.jpg",
     ],
-    category: "winter-new-popular",
+    category: "winter-new-most-popular",
   },
   Sweden: {
     capital: "Stockholm",
@@ -74,5 +63,4 @@ config = {
   },
 };
 
-let sliderPopular = new SliderPopular(configPopular);
 let destinationList = new DestinationList(config);

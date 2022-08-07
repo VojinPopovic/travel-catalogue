@@ -45,13 +45,15 @@ class DestinationList {
     catalogueItem.forEach((item) =>
       item.addEventListener("click", () => {
         overlay.style.display = "flex";
-        let destination = item.querySelector("h2").innerText;
+        let destinationName = item.querySelector("h2").innerText;
         let imageDivClass = "overlay-picture-container";
-        this.sliderLeft(destination, imageDivClass);
-        this.sliderRight(destination, imageDivClass);
+        this.sliderLeft(destinationName, imageDivClass);
+        this.sliderRight(destinationName, imageDivClass);
       })
     );
-    cancel.addEventListener("click", () => (overlay.style.display = "none"));
+    cancel.addEventListener("click", () => {
+      overlay.style.display = "none";
+    });
   }
   filterDestinations(catalogueItems) {
     let selection = document.querySelector("select");
@@ -68,40 +70,6 @@ class DestinationList {
     });
   }
 
-  sliderLeft(destination, imageDivClass) {
-    let image = this.countryList[destination].images;
-    let imageDiv = document.querySelector(`.${imageDivClass}`);
-    let btnLeft = document.querySelectorAll(".btn-left");
-    btnLeft.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        imageDiv.style.backgroundImage = `url("${image[0]}")`;
-        this.imgNum--;
-        if (this.imgNum < 0) {
-          this.imgNum = image.length - 1;
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        } else {
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        }
-      })
-    );
-  }
-  sliderRight(destination, imageDivClass) {
-    let image = this.countryList[destination].images;
-    let imageDiv = document.querySelector(`.${imageDivClass}`);
-    let btnRight = document.querySelectorAll(".btn-right");
-    btnRight.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        imageDiv.style.backgroundImage = `url("${image[0]}")`;
-        this.imgNum++;
-        if (this.imgNum >= image.length) {
-          this.imgNum = 0;
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        } else {
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        }
-      })
-    );
-  }
   sliderDescription(destination) {
     let sliderContainer = document.querySelector(".picture-slider-container");
     let descriptionDiv = document.createElement("div");
@@ -145,7 +113,44 @@ class DestinationList {
       this.sliderDescription(destination);
     }
   }
-  removeBackgroundPicture(imageDiv) {
-    imageDiv.style.backgroundImage = "none";
+  sliderLeft(destination, imageDivClass) {
+    let image = this.countryList[destination].images;
+    let imageDiv = document.querySelector(`.${imageDivClass}`);
+    let btnLeft = document.querySelectorAll(".btn-left");
+    let btnLeftNew;
+    btnLeft.forEach((btn) => {
+      this.removeEvents(btn, btnLeftNew).addEventListener("click", (e) => {
+        this.imgNum--;
+        if (this.imgNum < 0) {
+          this.imgNum = image.length - 1;
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        } else {
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        }
+      });
+    });
+  }
+  sliderRight(destination, imageDivClass) {
+    let image = this.countryList[destination].images;
+    let imageDiv = document.querySelector(`.${imageDivClass}`);
+    let btnRight = document.querySelectorAll(".btn-right");
+    let btnRightNew = [];
+    btnRight.forEach((btn) => {
+      this.removeEvents(btn, btnRightNew).addEventListener("click", (e) => {
+        this.imgNum++;
+        if (this.imgNum >= image.length) {
+          this.imgNum = 0;
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        } else {
+          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+        }
+      });
+    });
+  }
+
+  removeEvents(btn, newBtn) {
+    newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    return newBtn;
   }
 }

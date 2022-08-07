@@ -47,8 +47,10 @@ class DestinationList {
         overlay.style.display = "flex";
         let destinationName = item.querySelector("h2").innerText;
         let imageDivClass = "overlay-picture-container";
-        this.sliderLeft(destinationName, imageDivClass);
-        this.sliderRight(destinationName, imageDivClass);
+        let btnClassLeft = "left-two";
+        let btnClassRight = "right-two";
+        this.sliderLeft(destinationName, imageDivClass, btnClassLeft);
+        this.sliderRight(destinationName, imageDivClass, btnClassRight);
       })
     );
     cancel.addEventListener("click", () => {
@@ -108,48 +110,46 @@ class DestinationList {
   mostPopularFinder(destination) {
     if (this.countryList[destination].category.includes("most")) {
       let imageDivClass = "picture-slider-container";
-      this.sliderLeft(destination, imageDivClass);
-      this.sliderRight(destination, imageDivClass);
+      let btnClassLeft = "left-one";
+      let btnClassRight = "right-one";
+      this.sliderLeft(destination, imageDivClass, btnClassLeft);
+      this.sliderRight(destination, imageDivClass, btnClassRight);
       this.sliderDescription(destination);
     }
   }
-  sliderLeft(destination, imageDivClass) {
+  sliderLeft(destination, imageDivClass, btnClass) {
     let image = this.countryList[destination].images;
     let imageDiv = document.querySelector(`.${imageDivClass}`);
-    let btnLeft = document.querySelectorAll(".btn-left");
+    let btnLeft = document.querySelector(`.${btnClass}`);
     let btnLeftNew;
-    btnLeft.forEach((btn) => {
-      this.removeEvents(btn, btnLeftNew).addEventListener("click", (e) => {
-        this.imgNum--;
-        if (this.imgNum < 0) {
-          this.imgNum = image.length - 1;
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        } else {
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        }
-      });
+    this.removeEvents(btnLeft).addEventListener("click", (e) => {
+      this.imgNum--;
+      if (this.imgNum < 0) {
+        this.imgNum = image.length - 1;
+        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+      } else {
+        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+      }
     });
   }
-  sliderRight(destination, imageDivClass) {
+  sliderRight(destination, imageDivClass, btnClass) {
     let image = this.countryList[destination].images;
     let imageDiv = document.querySelector(`.${imageDivClass}`);
-    let btnRight = document.querySelectorAll(".btn-right");
+    let btnRight = document.querySelector(`.${btnClass}`);
     let btnRightNew = [];
-    btnRight.forEach((btn) => {
-      this.removeEvents(btn, btnRightNew).addEventListener("click", (e) => {
-        this.imgNum++;
-        if (this.imgNum >= image.length) {
-          this.imgNum = 0;
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        } else {
-          imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
-        }
-      });
+    this.removeEvents(btnRight).addEventListener("click", (e) => {
+      this.imgNum++;
+      if (this.imgNum >= image.length) {
+        this.imgNum = 0;
+        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+      } else {
+        imageDiv.style.backgroundImage = `url("${image[this.imgNum]}")`;
+      }
     });
   }
 
-  removeEvents(btn, newBtn) {
-    newBtn = btn.cloneNode(true);
+  removeEvents(btn) {
+    let newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
     return newBtn;
   }

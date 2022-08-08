@@ -51,6 +51,7 @@ class DestinationList {
         let btnClassRight = "right-two";
         this.sliderLeft(destinationName, imageDivClass, btnClassLeft);
         this.sliderRight(destinationName, imageDivClass, btnClassRight);
+        this.destinationDescription(destinationName);
       })
     );
     cancel.addEventListener("click", () => {
@@ -120,9 +121,9 @@ class DestinationList {
   sliderLeft(destination, imageDivClass, btnClass) {
     let image = this.countryList[destination].images;
     let imageDiv = document.querySelector(`.${imageDivClass}`);
+    imageDiv.style.backgroundImage =  `url("${image[0]}")`
     let btnLeft = document.querySelector(`.${btnClass}`);
-    let btnLeftNew;
-    this.removeEvents(btnLeft).addEventListener("click", (e) => {
+    this.removeEvents(btnLeft).addEventListener("click", () => {
       this.imgNum--;
       if (this.imgNum < 0) {
         this.imgNum = image.length - 1;
@@ -136,8 +137,7 @@ class DestinationList {
     let image = this.countryList[destination].images;
     let imageDiv = document.querySelector(`.${imageDivClass}`);
     let btnRight = document.querySelector(`.${btnClass}`);
-    let btnRightNew = [];
-    this.removeEvents(btnRight).addEventListener("click", (e) => {
+    this.removeEvents(btnRight).addEventListener("click", () => {
       this.imgNum++;
       if (this.imgNum >= image.length) {
         this.imgNum = 0;
@@ -152,5 +152,9 @@ class DestinationList {
     let newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
     return newBtn;
+  }
+  destinationDescription(destination) {
+    let description = document.querySelector(".destination-description");
+    description.innerText = this.countryList[destination]?.description
   }
 }

@@ -8,6 +8,8 @@ config = {
       "/images/iceland2.jpg",
     ],
     category: "winter-new-most-popular",
+    description:
+      "If you’re looking for cool facts about Iceland, you won’t believe some of this stuff! Did you know Icelanders leave their babies outside, they like to eat rotten sharks, and there’s an app to prevent dating your cousin? Tourism has exploded in Iceland recently, and this Nordic island country now entertains more than 2 milion visitors annually.  enables people to visit black beaches, blue glaciers, and roaring waterfalls, along with whale watching and the opportunity to see the mysterious Nothern Lights. Reserve your trip to iceland now with 20% discount!",
   },
   Sweden: {
     capital: "Stockholm",
@@ -18,6 +20,7 @@ config = {
       "/images/sweden2.jpg",
     ],
     category: "winter",
+    description:"Most people are probably aware that Sweden has a lot of forests, but the fact is that 2/3 of the total country’s land area is covered by forest with a total area of 280 650km. Sweden's national pride – the moose could potentially form one of the biggest cities in Sweden if they gathered as one group. ABBA is still one of the world’s most famous bands in history, and when you travel abroad it’s not uncommon that people will mention ABBA when they think about Sweden. However, not only ABBA has made it to the international scenes when it comes to music."
   },
   Switzerland: {
     capital: "Bern",

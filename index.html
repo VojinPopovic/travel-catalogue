@@ -23,8 +23,8 @@
             </div>
             <div class="ul-container">
               <ul>
-                <li><a href="">Catalogue</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="#Catalogue">Catalogue</a></li>
+                <li><a href="#About">About</a></li>
                 <li><a href="">Contact</a></li>
               </ul>
             </div>
@@ -46,12 +46,12 @@
           </div>
         </div>
       </section>
-      <section class="catalogue-section">
+      <section class="catalogue-section" id="Catalogue">
         <div class="catalogue-section-header">
           <h2>Catalogue of our recommended destinations</h2>
           <div class="selection-container">
             <select name="filter-selection" id="filter-selection">
-              <option value="" disabled selected>Select your filter</option>
+              <option value="" disabled selected>Filter</option>
               <option value="all">All Destinations</option>
               <option value="new">New Destinations</option>
               <option value="popular">Popular Destinations</option>
@@ -64,20 +64,41 @@
           <div class="grid-center"></div>
         </div>
       </section>
-    </div>
-    <div class="overlay">
-      <div class="overlay-content-container">
-        <div class="overlay-picture-container">
-          <div class="btns-container">
-            <button class="close-overlay"></button>
+      <section class="about-section" id="About">
+        <div class="container-for-centering">
+          <div class="logo-about-container">
             <!-- prettier-ignore -->
-            <button class="btn-left btn left-two"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z"/></svg></button>
-            <!-- prettier-ignore -->
-            <button class="btn-right btn right-two"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z"/></svg></button>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M12 9c1.59 7.61-2 13-2 13h3c1.88-5.8 1-9.91.5-12m2.16-2.84c.17.21.34.43.47.66a7.1 7.1 0 0 1-.63 8.44a7.11 7.11 0 0 0-.55-6.49c-.08-.13-.17-.24-.25-.36a7.123 7.123 0 0 0-2.16-1.98a7.127 7.127 0 0 0-4.96 6.79c0 .74.11 1.45.31 2.11a7.073 7.073 0 0 1-1.33-4.14c0-2.35 1.14-4.43 2.89-5.73C8 6.35 6.46 6.67 5.12 7.5c-.62.41-1.16.88-1.62 1.41c.55-1.33 1.5-2.52 2.8-3.34c1.5-.94 3.2-1.25 4.84-1.01C10.73 4 10.23 3.47 9.63 3c-.58-.42-1.21-.76-1.87-1c1.44.04 2.88.5 4.11 1.43c.63.47 1.13 1.04 1.53 1.64c.1 0 .19-.01.29-.01c3.2 0 5.91 2.11 6.81 5.02a7.073 7.073 0 0 0-4.84-2.92Z"/></svg>
+          </div>
+          <div class="about-description-container">
+            <p>
+              FastTravel is a travel website that offers booking services for
+              flights, hotels, cars and vacation packages to destinations
+              throughout the U.S. and across the globe. FastTravel offers
+              discounts at over 84,000 hotels worldwide and compares flights
+              from more than 600 airlines. FastTravel members earn reward points
+              for each dollar members spend in our agency, which they can use to
+              get cheaper prices on future flights or hotel stays. For more
+              information about our agency, or destinations you are interested
+              in, don't hesitate to contact us directly.
+            </p>
           </div>
         </div>
-        <div class="txt-container">
-          <p></p>
+      </section>
+      <div class="overlay">
+        <div class="overlay-content-container">
+          <div class="overlay-picture-container">
+            <div class="btns-container">
+              <button class="close-overlay"></button>
+              <!-- prettier-ignore -->
+              <button class="btn-left btn left-two"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z"/></svg></button>
+              <!-- prettier-ignore -->
+              <button class="btn-right btn right-two"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z"/></svg></button>
+            </div>
+          </div>
+          <div class="destination-description-container">
+            <p class="destination-description"></p>
+          </div>
         </div>
       </div>
     </div>

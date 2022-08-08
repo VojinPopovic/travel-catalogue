@@ -4,6 +4,7 @@ class DestinationList {
     this.imgNum = 0;
     this.populateList();
     this.displayOverlay();
+    this.displayMobileMenu();
   }
   populateList() {
     let catalogue = document.querySelector(".grid-center");
@@ -121,7 +122,7 @@ class DestinationList {
   sliderLeft(destination, imageDivClass, btnClass) {
     let image = this.countryList[destination].images;
     let imageDiv = document.querySelector(`.${imageDivClass}`);
-    imageDiv.style.backgroundImage =  `url("${image[0]}")`
+    imageDiv.style.backgroundImage = `url("${image[0]}")`;
     let btnLeft = document.querySelector(`.${btnClass}`);
     this.removeEvents(btnLeft).addEventListener("click", () => {
       this.imgNum--;
@@ -155,6 +156,21 @@ class DestinationList {
   }
   destinationDescription(destination) {
     let description = document.querySelector(".destination-description");
-    description.innerText = this.countryList[destination]?.description
+    description.innerText = this.countryList[destination]?.description;
+  }
+  displayMobileMenu() {
+    let hamburger = document.querySelector(".hamburger-menu");
+    let closeHamburger = document.querySelector(".close-hamburger-menu");
+    let mobileMenu = document.querySelector(".ul-container-mobile");
+    hamburger.addEventListener("click", () => {
+      hamburger.style.display = "none";
+      mobileMenu.style.display = "block";
+      closeHamburger.style.display = "block";
+    });
+    closeHamburger.addEventListener("click", () => {
+      closeHamburger.style.display = "none";
+      mobileMenu.style.display = "none";
+      hamburger.style.display = "block";
+    });
   }
 }

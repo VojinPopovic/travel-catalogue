@@ -1,4 +1,4 @@
-config = {
+const config = {
   Iceland: {
     capital: "Reykjavík",
     official_language: "Icelandic",
@@ -20,7 +20,8 @@ config = {
       "/images/sweden2.jpg",
     ],
     category: "winter",
-    description:"Most people are probably aware that Sweden has a lot of forests, but the fact is that 2/3 of the total country’s land area is covered by forest with a total area of 280 650km. Sweden's national pride – the moose could potentially form one of the biggest cities in Sweden if they gathered as one group. ABBA is still one of the world’s most famous bands in history, and when you travel abroad it’s not uncommon that people will mention ABBA when they think about Sweden. However, not only ABBA has made it to the international scenes when it comes to music."
+    description:
+      "Most people are probably aware that Sweden has a lot of forests, but the fact is that 2/3 of the total country’s land area is covered by forest with a total area of 280 650km. Sweden's national pride – the moose could potentially form one of the biggest cities in Sweden if they gathered as one group. ABBA is still one of the world’s most famous bands in history, and when you travel abroad it’s not uncommon that people will mention ABBA when they think about Sweden. However, not only ABBA has made it to the international scenes when it comes to music.",
   },
   Switzerland: {
     capital: "Bern",
@@ -67,3 +68,11 @@ config = {
 };
 
 let destinationList = new DestinationList(config);
+
+let errors = {
+  name: [],
+  email: [],
+  message: [],
+};
+
+let formValidation = new FormValidation(errors);

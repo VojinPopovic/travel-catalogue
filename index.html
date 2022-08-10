@@ -127,15 +127,21 @@
             <!-- prettier-ignore -->
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
-          <form action="">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
-            <label for="message">Message</label>
-            <!-- prettier-ignore -->
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input type="submit" value="Submit">
+          <form action="" formnovalidate>
+            <div class="input-container">
+              <label for="name">Name</label>
+              <input class="input" type="text" name="name" id="name" />
+            </div>
+            <div class="input-container">
+              <label for="email">Email</label>
+              <input class="input" type="email" name="email" id="email" />
+            </div>
+            <div class="input-container">
+              <label for="message">Message</label>
+              <!-- prettier-ignore -->
+              <textarea class="input" name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit" id="submit" formnovalidate>
           </form>
         </div>
       </div>

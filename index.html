@@ -25,7 +25,7 @@
               <ul class="desktop-navigation-ul">
                 <li><a href="#Catalogue">Catalogue</a></li>
                 <li><a href="#About">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
               </ul>
               <!-- prettier-ignore -->
               <div class="hamburger-menu">
@@ -40,7 +40,7 @@
                   <ul class="mobile-navigation-ul">
                     <li><a href="#Catalogue">Catalogue</a></li>
                     <li><a href="#About">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li class="contact"><a href="#">Contact</a></li>
                   </ul>
                 </div>
               </div>
@@ -106,7 +106,7 @@
         <div class="overlay-content-container">
           <div class="overlay-picture-container">
             <div class="btns-container">
-              <button class="close-overlay">
+              <button class="close close-overlay">
                 <!-- prettier-ignore -->
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
               </button>
@@ -119,6 +119,24 @@
           <div class="destination-description-container">
             <p class="destination-description"></p>
           </div>
+        </div>
+      </div>
+      <div class="contact-overlay">
+        <div class="contact-form-container">
+          <button class="close close-contact-overlay">
+            <!-- prettier-ignore -->
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <form action="">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <label for="message">Message</label>
+            <!-- prettier-ignore -->
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Submit">
+          </form>
         </div>
       </div>
     </div>

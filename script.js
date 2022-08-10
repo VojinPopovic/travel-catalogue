@@ -5,6 +5,7 @@ class DestinationList {
     this.populateList();
     this.displayOverlay();
     this.displayMobileMenu();
+    this.displayContactOverlay()
   }
   populateList() {
     let catalogue = document.querySelector(".grid-center");
@@ -58,6 +59,16 @@ class DestinationList {
     cancel.addEventListener("click", () => {
       overlay.style.display = "none";
     });
+  }
+
+  displayContactOverlay(){
+    let contacts = document.querySelectorAll(".contact")
+    let displayContactOverlay = document.querySelector(".contact-overlay")
+    let closeContactOverlay = document.querySelector(".close-contact-overlay")
+    contacts.forEach( contact => contact.addEventListener("click", ()=>{
+      displayContactOverlay.style.display= "flex"
+    }))
+    closeContactOverlay.addEventListener("click", () => displayContactOverlay.style.display = "none")
   }
   filterDestinations(catalogueItems) {
     let selection = document.querySelector("select");

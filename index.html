@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <script src="script-config.js" defer></script>
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/slider-section.css" />
+    <link rel="stylesheet" href="css/catalogue-section.css" />
+    <link rel="stylesheet" href="css/overlay.css" />
+    <link rel="stylesheet" href="css/contact-overlay.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Ubuntu:wght@300;400;700&display=swap");
     </style>
@@ -127,7 +129,39 @@
             <!-- prettier-ignore -->
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
-          <form action="" formnovalidate>
+          <div class="phone-number">
+            <h2>Phone Number</h2>
+            <p>+381 64/ 112-3221</p>
+            <br />
+            <h2>Or send a message</h2>
+          </div>
+          <form class="login-form" action="" formnovalidate>
+            <div class="input-container name">
+              <label for="name">Name</label>
+              <input class="input" type="text" name="name" id="login-name" />
+            </div>
+            <div class="input-container email">
+              <label for="email">Email</label>
+              <input class="input" type="email" name="email" id="login-email" />
+            </div>
+            <div class="input-container password">
+              <label for="password">Password</label>
+              <!-- prettier-ignore -->
+              <input class="input" type="password" name="password" id="password"/>
+            </div>
+            <div class="input-container confirm-password">
+              <label for="confirm-password">Confirm Password</label>
+              <!-- prettier-ignore -->
+              <input class="input" type="password" name="confirm-password" id="confirm-password"/>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              id="login-submit"
+              formnovalidate
+            />
+          </form>
+          <form class="message-form" action="" formnovalidate>
             <div class="input-container">
               <label for="name">Name</label>
               <input class="input" type="text" name="name" id="name" />
@@ -141,10 +175,15 @@
               <!-- prettier-ignore -->
               <textarea class="input" name="message" id="message" cols="30" rows="10"></textarea>
             </div>
-            <input type="submit" value="Submit" id="submit" formnovalidate>
+            <input type="submit" value="Submit" id="submit" formnovalidate />
           </form>
         </div>
       </div>
     </div>
+    <script src="Session.js"></script>
+    <script src="User.js"></script>
+    <script src="DestinationList.js"></script>
+    <script src="script-config.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

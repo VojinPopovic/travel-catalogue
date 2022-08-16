@@ -75,4 +75,3 @@ let errors = {
   message: [],
 };
 
-let formValidation = new FormValidation(errors);

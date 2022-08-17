@@ -2,18 +2,15 @@ let session = new Session();
 session = session.getSession();
 
 if (session !== "" && session !== undefined) {
-  window.location.href = "cart.html";
   console.log("cao");
 }
 let user = new User();
 let inputs = document.querySelectorAll("input");
-let forms = document.querySelectorAll("form");
-forms.forEach((form) =>
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    user.createUser();
-  })
-);
+let loginForm = document.querySelector(".login-form");
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  user.login();
+});
 inputs.forEach((input) =>
   input.addEventListener("change", () => {
     if (input.parentElement.className.includes("name")) {
@@ -25,3 +22,4 @@ inputs.forEach((input) =>
     }
   })
 );
+

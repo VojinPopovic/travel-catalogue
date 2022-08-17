@@ -52,8 +52,26 @@
   width: 100%;
   height: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.destination-description-container button {
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  border: 1px black solid;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  transition: 700ms;
+}
+
+.destination-description-container button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: 700ms;
 }
 
 .destination-description {

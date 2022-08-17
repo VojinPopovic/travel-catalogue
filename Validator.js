@@ -1,3 +1,5 @@
+//Otkacio si ovaj fajl za sada, prepravi to kasnije. Treba i da se poveze create user method na registration form
+
 class FormValidation {
   constructor(errors) {
     this.errors = errors;

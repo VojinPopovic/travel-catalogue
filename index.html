@@ -121,6 +121,7 @@
           </div>
           <div class="destination-description-container">
             <p class="destination-description"></p>
+            <button class="book-button">Book Now</button>
           </div>
         </div>
       </div>
@@ -136,42 +137,21 @@
             <br />
             <h2>Or login and send a message</h2>
           </div>
-          <form class="registration-form" action="" formnovalidate>
+          <form class="login-form" action="" formnovalidate>
             <div class="input-container name">
               <label for="name">Name</label>
-              <input
-                class="input"
-                type="text"
-                name="name"
-                id="registration-name"
-              />
-            </div>
-            <div class="input-container email">
-              <label for="email">Email</label>
-              <input
-                class="input"
-                type="email"
-                name="email"
-                id="registration-email"
-              />
+              <input class="input" type="text" name="name" id="login-name" />
             </div>
             <div class="input-container password">
               <label for="password">Password</label>
               <!-- prettier-ignore -->
-              <input class="input" type="password" name="password" id="password"/>
+              <input class="input" type="password" name="password" id="login-password"/>
             </div>
-            <div class="input-container confirm-password">
-              <label for="confirm-password">Confirm Password</label>
-              <!-- prettier-ignore -->
-              <input class="input" type="password" name="confirm-password" id="confirm-password"/>
-            </div>
-            <input
-              type="submit"
-              value="Submit"
-              id="login-submit"
-              formnovalidate
-            />
+            <!-- prettier-ignore -->
+            <input type="submit" value="Submit" id="login-submit" formnovalidate />
           </form>
+          <br />
+          <p>Don't have an account ? <span class="register">Register.</span></p>
           <form class="message-form" action="" formnovalidate>
             <div class="input-container">
               <label for="message">Message</label>

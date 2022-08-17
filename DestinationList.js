@@ -6,6 +6,7 @@ class DestinationList {
     this.displayOverlay();
     this.displayMobileMenu();
     this.displayContactOverlay();
+    this.bookDestination()
   }
   populateList() {
     let catalogue = document.querySelector(".grid-center");
@@ -54,6 +55,7 @@ class DestinationList {
         this.sliderLeft(destinationName, imageDivClass, btnClassLeft);
         this.sliderRight(destinationName, imageDivClass, btnClassRight);
         this.destinationDescription(destinationName);
+        this.bookDestination(destinationName)
       })
     );
     cancel.addEventListener("click", () => {
@@ -185,5 +187,13 @@ class DestinationList {
       mobileMenu.style.display = "none";
       hamburger.style.display = "block";
     });
+  }
+  bookDestination(destinationName){
+    let bookButton = document.querySelector(".book-button")
+    this.removeEvents(bookButton).addEventListener("click", ()=> {
+      let session = new Session()
+      session.destination = destinationName
+      session.createCartItem()
+    })
   }
 }

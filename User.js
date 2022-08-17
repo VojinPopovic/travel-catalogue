@@ -25,7 +25,18 @@ class User {
         let session = new Session();
         session.username = data.username;
         session.startSession();
-        window.location.href = "cart.html";
+      });
+  }
+  login() {
+    fetch(this.api)
+      .then((response) => response.json())
+      .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+          // prettier-ignore
+          if(this.username === data[i].username && this.password === data[i].password){
+          console.log("cao")  
+          }
+        }
       });
   }
 }

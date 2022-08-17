@@ -2,9 +2,9 @@ let session = new Session();
 session = session.getSession();
 
 if (session !== "" && session !== undefined) {
-  window.location.href = "cart.html"
+  window.location.href = "cart.html";
+  console.log("cao");
 }
-
 let user = new User();
 let inputs = document.querySelectorAll("input");
 let forms = document.querySelectorAll("form");

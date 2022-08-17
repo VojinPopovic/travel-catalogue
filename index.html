@@ -28,6 +28,8 @@
                 <li><a href="#Catalogue">Catalogue</a></li>
                 <li><a href="#About">About</a></li>
                 <li class="contact"><a href="#">Contact</a></li>
+                <!-- prettier-ignore -->
+                <li class="cart"></li>
               </ul>
               <!-- prettier-ignore -->
               <div class="hamburger-menu">
@@ -38,13 +40,12 @@
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
               </div>
               <div class="ul-container-mobile">
-                <div class="mobile-navigation-ul">
-                  <ul class="mobile-navigation-ul">
-                    <li><a href="#Catalogue">Catalogue</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li class="contact"><a href="#">Contact</a></li>
-                  </ul>
-                </div>
+                <ul class="mobile-navigation-ul">
+                  <li><a href="#Catalogue">Catalogue</a></li>
+                  <li><a href="#About">About</a></li>
+                  <li class="contact"><a href="#">Contact</a></li>
+                  <li class="cart"></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -133,16 +134,26 @@
             <h2>Phone Number</h2>
             <p>+381 64/ 112-3221</p>
             <br />
-            <h2>Or send a message</h2>
+            <h2>Or login and send a message</h2>
           </div>
-          <form class="login-form" action="" formnovalidate>
+          <form class="registration-form" action="" formnovalidate>
             <div class="input-container name">
               <label for="name">Name</label>
-              <input class="input" type="text" name="name" id="login-name" />
+              <input
+                class="input"
+                type="text"
+                name="name"
+                id="registration-name"
+              />
             </div>
             <div class="input-container email">
               <label for="email">Email</label>
-              <input class="input" type="email" name="email" id="login-email" />
+              <input
+                class="input"
+                type="email"
+                name="email"
+                id="registration-email"
+              />
             </div>
             <div class="input-container password">
               <label for="password">Password</label>
@@ -162,14 +173,6 @@
             />
           </form>
           <form class="message-form" action="" formnovalidate>
-            <div class="input-container">
-              <label for="name">Name</label>
-              <input class="input" type="text" name="name" id="name" />
-            </div>
-            <div class="input-container">
-              <label for="email">Email</label>
-              <input class="input" type="email" name="email" id="email" />
-            </div>
             <div class="input-container">
               <label for="message">Message</label>
               <!-- prettier-ignore -->

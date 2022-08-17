@@ -44,15 +44,23 @@ nav {
   justify-content: flex-end;
   align-items: center;
 }
+
+.ul-container svg {
+  display: none;
+}
 .desktop-navigation-ul {
+  width: 50%;
+  height: 50px;
   list-style: row;
   display: flex;
   flex-direction: row;
   list-style: none;
+  justify-content: flex-end;
+  align-items: center;
   margin-right: 30px;
 }
 
-li {
+.desktop-navigation-ul li {
   margin-left: 30px;
   white-space: nowrap;
   color: white;
@@ -75,14 +83,6 @@ a {
   margin-left: 10%;
 }
 
-.about-section {
-  width: 100%;
-  height: 500px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-}
-
 .container-for-centering {
   width: 90%;
   height: 100%;
@@ -100,6 +100,13 @@ a {
   width: 100%;
   height: 100%;
 }
+.about-section {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
 
 .about-description-container {
   width: 50%;
@@ -112,9 +119,6 @@ a {
 .about-description-container p {
   color: white;
   line-height: 24px;
-}
-.ul-container svg {
-  display: none;
 }
 
 .ul-container-mobile {
@@ -133,15 +137,27 @@ a {
   background-color: rgb(0, 0, 0);
 }
 .mobile-navigation-ul {
+  width: 100%;
+  height: auto;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   list-style: none;
-  padding-inline-start: 0;
 }
 
 .mobile-navigation-ul li {
   margin-bottom: 50px;
   margin-left: 0;
 }
+.cart {
+  width: 40px;
+  height: 50px;
+  background: url("https://api.iconify.design/ph/shopping-cart-light.svg?color=white")
+    no-repeat center center / contain;
+}
+
 
 .hamburger-menu,
 .close-hamburger-menu {

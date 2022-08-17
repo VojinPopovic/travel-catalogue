@@ -177,7 +177,7 @@ class DestinationList {
     let mobileMenu = document.querySelector(".ul-container-mobile");
     hamburger.addEventListener("click", () => {
       hamburger.style.display = "none";
-      mobileMenu.style.display = "block";
+      mobileMenu.style.display = "flex";
       closeHamburger.style.display = "block";
     });
     closeHamburger.addEventListener("click", () => {

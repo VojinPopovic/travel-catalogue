@@ -1,14 +1,13 @@
 let session = new Session();
 let getCartItem = session.getCartItem();
-let user = new User();
 session = session.getSession();
+console.log(session)
+
 if (session !== null && session !== undefined) {
   user.showTextForm();
 }
 
-if (session !== "" && session !== undefined) {
-}
-
+let user = new User();
 let navigation = new Navigation()
 navigation.displayMobileMenu()
 navigation.cart()

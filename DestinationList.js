@@ -5,7 +5,7 @@ class DestinationList {
     this.populateList();
     this.displayOverlay();
     this.displayContactOverlay();
-    this.bookDestination()
+    this.bookDestination();
   }
   populateList() {
     let catalogue = document.querySelector(".grid-center");
@@ -54,7 +54,7 @@ class DestinationList {
         this.sliderLeft(destinationName, imageDivClass, btnClassLeft);
         this.sliderRight(destinationName, imageDivClass, btnClassRight);
         this.destinationDescription(destinationName);
-        this.bookDestination(destinationName)
+        this.bookDestination(destinationName);
       })
     );
     cancel.addEventListener("click", () => {
@@ -172,13 +172,13 @@ class DestinationList {
     let description = document.querySelector(".destination-description");
     description.innerText = this.countryList[destination]?.description;
   }
-  bookDestination(destinationName){
-    let bookButton = document.querySelector(".book-button")
-    this.removeEvents(bookButton).addEventListener("click", ()=> {
-      let session = new Session()
-      session.destination = destinationName
-      session.createCartItem()
-      window.location.href = "/cart.html"
-    })
+  bookDestination(destinationName) {
+    let bookButton = document.querySelector(".book-button");
+    this.removeEvents(bookButton).addEventListener("click", () => {
+      let session = new Session();
+      session.destination = destinationName;
+      session.createCartItem();
+      window.location.href = "cart.html"
+    });
   }
 }

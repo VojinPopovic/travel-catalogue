@@ -10,9 +10,13 @@ class Session {
   getSession() {
     let name = this.username;
     let cookie = document.cookie;
-    if (cookie.includes("=")) {
-      let index = cookie.indexOf("=");
-      return cookie.substring(0, index);
+    cookie = cookie.split(";");
+    for (let i = 0; i < cookie.length; i++) {
+      if (cookie[i].includes("1")) {
+        let index = cookie.indexOf("=");
+        console.log(cookie.substring(0, index));
+        return cookie.substring(0, index);
+      }
     }
   }
   createCartItem() {

@@ -135,23 +135,23 @@
             <h2>Phone Number</h2>
             <p>+381 64/ 112-3221</p>
             <br />
-            <h2>Or login and send a message</h2>
+            <h2 class="login-message">Or login and send a message</h2>
           </div>
           <form class="login-form" action="" formnovalidate>
             <div class="input-container name">
               <label for="name">Name</label>
-              <input class="input" type="text" name="name" id="login-name" />
+              <input class="login-input" type="text" name="name" id="login-name" />
             </div>
             <div class="input-container password">
               <label for="password">Password</label>
               <!-- prettier-ignore -->
-              <input class="input" type="password" name="password" id="login-password"/>
+              <input class="login-input" type="password" name="password" id="login-password"/>
             </div>
             <!-- prettier-ignore -->
             <input type="submit" value="Submit" id="login-submit" formnovalidate />
           </form>
           <br />
-          <p>Don't have an account ? <span class="register">Register.</span></p>
+          <p class="register-paragraph">Don't have an account ? <span class="register">Register.</span></p>
           <form class="message-form" action="" formnovalidate>
             <div class="input-container">
               <label for="message">Message</label>
@@ -163,6 +163,7 @@
         </div>
       </div>
     </div>
+    <script src="Navigation.js"></script>
     <script src="Session.js"></script>
     <script src="User.js"></script>
     <script src="DestinationList.js"></script>

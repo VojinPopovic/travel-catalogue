@@ -5,33 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
+    <link rel="stylesheet" href="css/navigation.css">
   </head>
   <body>
-    <form class="registration-form" action="" formnovalidate>
-      <div class="input-container name">
-        <label for="name">Name</label>
-        <input class="input" type="text" name="name" id="registration-name" />
-      </div>
-      <div class="input-container email">
-        <label for="email">Email</label>
-        <input
-          class="input"
-          type="email"
-          name="email"
-          id="registration-email"
-        />
-      </div>
-      <div class="input-container password">
-        <label for="password">Password</label>
-        <!-- prettier-ignore -->
-        <input class="input" type="password" name="password" id="password"/>
-      </div>
-      <div class="input-container confirm-password">
-        <label for="confirm-password">Confirm Password</label>
-        <!-- prettier-ignore -->
-        <input class="input" type="password" name="confirm-password" id="confirm-password"/>
-      </div>
-      <input type="submit" value="Submit" id="login-submit" formnovalidate />
-    </form>
+    <div class="main-container">
+      <header>
+      </header>
+      <form class="registration-form" action="" formnovalidate>
+        <div class="input-container name">
+          <label for="name">Name</label>
+          <input
+            class="registration-input"
+            type="text"
+            name="name"
+            id="registration-name"
+          />
+        </div>
+        <div class="input-container email">
+          <label for="email">Email</label>
+          <input
+            class="registration-input"
+            type="email"
+            name="email"
+            id="registration-email"
+          />
+        </div>
+        <div class="input-container password">
+          <label for="password">Password</label>
+          <!-- prettier-ignore -->
+          <input class="registration-input" type="password" name="password" id="password"/>
+        </div>
+        <div class="input-container confirm-password">
+          <label for="confirm-password">Confirm Password</label>
+          <!-- prettier-ignore -->
+          <input class="registration-input" type="password" name="confirm-password" id="confirm-password"/>
+        </div>
+        <input type="submit" value="Submit" id="login-submit" formnovalidate />
+      </form>
+    </div>
+    <script src="Navigation.js"></script>
+    <script src="Session.js"></script>
+    <script src="User.js"></script>
+    <script src="registration.js"></script>
   </body>
 </html>

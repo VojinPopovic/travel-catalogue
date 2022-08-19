@@ -159,17 +159,6 @@ a {
   position: relative;
 }
 
-.cart::after {
-  content: " ";
-  width: 9px;
-  height: 9px;
-  background-color: red;
-  position: absolute;
-  top: 3px;
-  right: 0;
-  border-radius: 50%;
-}
-
 .hamburger-menu,
 .close-hamburger-menu {
   display: none;

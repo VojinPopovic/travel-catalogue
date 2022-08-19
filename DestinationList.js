@@ -4,7 +4,6 @@ class DestinationList {
     this.imgNum = 0;
     this.populateList();
     this.displayOverlay();
-    this.displayMobileMenu();
     this.displayContactOverlay();
     this.bookDestination()
   }
@@ -173,27 +172,13 @@ class DestinationList {
     let description = document.querySelector(".destination-description");
     description.innerText = this.countryList[destination]?.description;
   }
-  displayMobileMenu() {
-    let hamburger = document.querySelector(".hamburger-menu");
-    let closeHamburger = document.querySelector(".close-hamburger-menu");
-    let mobileMenu = document.querySelector(".ul-container-mobile");
-    hamburger.addEventListener("click", () => {
-      hamburger.style.display = "none";
-      mobileMenu.style.display = "flex";
-      closeHamburger.style.display = "block";
-    });
-    closeHamburger.addEventListener("click", () => {
-      closeHamburger.style.display = "none";
-      mobileMenu.style.display = "none";
-      hamburger.style.display = "block";
-    });
-  }
   bookDestination(destinationName){
     let bookButton = document.querySelector(".book-button")
     this.removeEvents(bookButton).addEventListener("click", ()=> {
       let session = new Session()
       session.destination = destinationName
       session.createCartItem()
+      window.location.href = "/cart.html"
     })
   }
 }

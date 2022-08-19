@@ -28,4 +28,14 @@ class Session {
     date.setTime(today + expires);
     return date.toUTCString();
   }
+
+  getCartItem() {
+    let cookie = document.cookie.split(";");
+    for (let i = 0; i < cookie.length; i++) {
+      if (cookie[i].includes("2")) {
+        let index = cookie[i].indexOf("=");
+        return cookie[i].substring(0, index);
+      }
+    }
+  }
 }

@@ -8,13 +8,12 @@ class Session {
     document.cookie = `${this.username}=1; expires=${date}`;
   }
   getSession() {
-    let name = this.username;
     let cookie = document.cookie;
     cookie = cookie.split(";");
     for (let i = 0; i < cookie.length; i++) {
       if (cookie[i].includes("1")) {
         let index = cookie[i].indexOf("=");
-        console.log(cookie[i].substring(0, index))
+        console.log(cookie[i].substring(0, index));
         return cookie[i].substring(0, index);
       }
     }
@@ -41,5 +40,9 @@ class Session {
         return cookie[i].substring(0, index);
       }
     }
+  }
+  destroySession(username) {
+    document.cookie = username.trim() + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+
   }
 }

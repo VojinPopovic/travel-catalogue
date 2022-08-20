@@ -25,7 +25,7 @@ class User {
         let session = new Session();
         session.username = data.username;
         session.startSession();
-        window.location.href = "index.html"
+        window.location.href = "index.html";
       });
   }
   login() {
@@ -44,6 +44,26 @@ class User {
           }
         }
       });
+  }
+
+  logout() {
+    let session = new Session();
+    session = session;
+    let registers = document.querySelectorAll(".registration a");
+    if (
+      session.getSession() !== null &&
+      session.getSession() !== undefined &&
+      session.getSession() !== ""
+    ) {
+      registers.forEach((register) => {
+        register.innerText = "Log out";
+        register.addEventListener("click", () =>
+          session.destroySession(session.getSession())
+        );
+      });
+    } else {
+      registers.forEach((register) => (register.innerText = "Register"));
+    }
   }
   showTextForm() {
     let textForm = document.querySelector(".message-form");

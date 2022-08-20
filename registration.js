@@ -3,6 +3,7 @@ let navigation = new Navigation();
 navigation.addNavigation();
 navigation.displayMobileMenu();
 navigation.cart();
+navigation.navLogout()
 let registerForm = document.querySelector(".registration-form");
 let inputs = document.querySelectorAll(".registration-input");
 

@@ -20,7 +20,14 @@ class Session {
   }
   createCartItem() {
     let date = this.expires();
-    document.cookie = `${this.destination}=2; expires=${date}`;
+    let cookie = document.cookie;
+    cookie = cookie.split(";");
+    for (let i = 0; i < cookie.length; i++) {
+      if (cookie[i].includes("2")) {
+      } else {
+        document.cookie = `${this.destination}=2; expires=${date}`;
+      }
+    }
   }
   expires() {
     let date = new Date();
@@ -42,7 +49,12 @@ class Session {
     }
   }
   destroySession(username) {
-    document.cookie = username.trim() + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+    document.cookie =
+      username.trim() + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+  }
 
+  destroyCartItem(cartItem) {
+    document.cookie =
+      cartItem.trim() + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
   }
 }

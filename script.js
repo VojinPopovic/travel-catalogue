@@ -1,3 +1,4 @@
+let destinationList = new DestinationList(config);
 let session = new Session();
 let getCartItem = session.getCartItem();
 session = session.getSession();

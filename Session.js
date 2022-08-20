@@ -13,7 +13,6 @@ class Session {
     for (let i = 0; i < cookie.length; i++) {
       if (cookie[i].includes("1")) {
         let index = cookie[i].indexOf("=");
-        console.log(cookie[i].substring(0, index));
         return cookie[i].substring(0, index);
       }
     }

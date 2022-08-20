@@ -5,7 +5,7 @@ navigation.cart();
 navigation.navLogout();
 
 let session = new Session();
-let getCartItem = session.getCartItem();
+let getCartItem = session.getCartItem().trim();
 
 if (getCartItem !== null && getCartItem !== undefined) {
   let style = document.createElement("style");
@@ -15,6 +15,7 @@ if (getCartItem !== null && getCartItem !== undefined) {
   carts.forEach((cart) => cart.appendChild(style));
 }
 
+let countryList = config;
 let catalogueItem = document.createElement("div");
 let picture = document.createElement("div");
 let textDiv = document.createElement("div");
@@ -24,7 +25,6 @@ let price = document.createElement("p");
 let blabla = document.createElement("div");
 let emptyCart = document.createElement("button");
 let buy = document.createElement("button");
-let countryList = config;
 
 country.innerText = `${getCartItem}`;
 description.innerText = `Capital: ${countryList[getCartItem].capital} 
